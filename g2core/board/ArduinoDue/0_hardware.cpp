@@ -238,6 +238,7 @@ const configSubtable * const getSysConfig_3() { return &sys_config_3; }
 
 #else
 
+#if HAS_LASER
 stat_t set_pulse_duration(nvObj_t *nv)
 {
     laser_tool.set_pulse_duration_us(nv->valuetype == TYPE_FLOAT ? nv->value_flt : nv->value_int);
@@ -300,6 +301,15 @@ constexpr cfgItem_t sys_config_items_3[] = {
 
 constexpr cfgSubtableFromStaticArray sys_config_3{sys_config_items_3};
 const configSubtable * const getSysConfig_3() { return &sys_config_3; }
+	
+#else
+
+// Stub in getSysConfig_3
+// constexpr cfgItem_t sys_config_items_3[] = {};
+constexpr cfgSubtableFromStaticArray sys_config_3{};
+const configSubtable * const getSysConfig_3() { return &sys_config_3; }
+
+#endif
 
 #endif
 

@@ -107,16 +107,13 @@ TruStabilitySSC<SPIBus_used_t::SPIBusDevice> pressure_sensor{spiBus,
  **** CODE **************************************************************************
  ************************************************************************************/
 
+#if HAS_PRESSURE
 // Register a SysTick event to call start_sampling every temperature_sample_freq ms
 const int16_t ain_sample_freq = 2;
 int16_t ain_sample_counter = ain_sample_freq;
 Motate::SysTickEvent ain_tick_event{
     [] {
         if (!--ain_sample_counter) {
-            ai1.startSampling();
-            ai2.startSampling();
-            ai3.startSampling();
-            ai4.startSampling();
 
             #if HAS_PRESSURE
             pressure_sensor.startSampling(); // has a timeout built in to prevent over-calling
@@ -127,6 +124,7 @@ Motate::SysTickEvent ain_tick_event{
     },
     nullptr
 };
+#endif
 
 /*
  * gpio_reset() - reset inputs and outputs (no initialization)

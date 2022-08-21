@@ -1,0 +1,27 @@
+Bloque aluminio para las ruedas:
+	-Maza hecha con un bloque de 5x5x4cm
+	
+	
+	Selecciona Inicio , y abre Configuración . A continuación, en Sistema , selecciona Acerca de  y, en Especificaciones de Windows, busca Edición
+	
+	selecciona Inicio  y abre Configuración . A continuación, en Sistema , selecciona Escritorio remoto, establece Escritorio remoto como Activadoy, a continuación, selecciona Confirmar.
+	
+	
+	
+Function		Port	ArduinoPin
+
+ESTOP: 			B17 	62 [1]
+PROBE:			A0		69 [2]
+ZLIMIT: 		D8		12 [5]
+YLIMIT: 		D7		11 [4]
+XLIMIT: 		C29		10 [3]
+COOLANT: 		C22		8
+SPINDLE_PWM: 	C23		7
+SPINDLE_DIR: 	C25		5
+X_STEP: 		A15		24
+Y_STEP: 		D0		25
+Z_STEP: 		D1		26
+X_DIR:  		D9		30
+Y_DIR:  		A7		31
+Z_DIR:  		D10		32
+

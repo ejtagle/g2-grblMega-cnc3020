@@ -179,6 +179,9 @@ _MAKE_MOTATE_PIN(78, 'B', 23);  // SS1
 // that will refer to these pin assignments.
 #include "motate_chip_pin_functions.h"
 
+///#define XSTR(x) STR(x)
+///#define STR(x) #x
+///#pragma message "The value of ABC: " XSTR(MOTATE_BOARD)
 
 #ifdef MOTATE_BOARD
 #define MOTATE_BOARD_PINOUT <MOTATE_BOARD-pinout.h>

@@ -278,5 +278,15 @@ ifeq ("$(CONFIG)","fourcable")
     SETTINGS_FILE="settings_fourcable.h"
 endif
 
+##########
+# CNC3020
+ifeq ("$(CONFIG)","cnc3020")
+    ifeq ("$(BOARD)","NONE")
+        BOARD=grblMega
+    endif
+    SETTINGS_FILE="settings_cnc3020.h"
+endif
+
+
 include $(wildcard ./board/$(STAR).mk)
 
